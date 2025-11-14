@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./App.css";
+
 
 const DEFAULT_TEXT = `“日本が台湾海峡情勢に
 武力介入すれば
@@ -22,7 +23,7 @@ export default function App() {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/background.png";
+    img.src = "./background.png";
     img.onload = () => setBgImage(img);
   }, []);
 
@@ -99,7 +100,7 @@ export default function App() {
     if (!canvas) return;
 
     const link = document.createElement("a");
-    link.download = "generated.png";
+    link.download = "MFAC-maker.png";
     link.href = canvas.toDataURL("image/png");
     link.click();
   };
